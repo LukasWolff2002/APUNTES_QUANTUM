@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, bm}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+
+
+\newcommand{\ii}{\mathrm{i}}
+
+\title{\textbf{\LARGE Apuntes Quantum}}
+\author{
+    Lukas Wolff}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Qubit}
+
+Un qubit se puede definir como:
+
+\begin{equation}
+    |\psi\rangle = \alpha |0\rangle + \beta |1\rangle
+\end{equation}
+
+Donde se debe cumplir por probabilidad que:
+
+\begin{equation}
+    |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+
+Ahora bien, se puede tener una superposicion de 2 o mas qubits, por ejemplo:
+
+\begin{equation}
+    |\psi\rangle = \alpha |00\rangle + \beta |01\rangle + \gamma |10\rangle + \delta |11\rangle
+\end{equation}
+
+Por lo tanto, el espacio lineal de n qubits es:
+
+\begin{equation}
+    |\psi\rangle = \sum_{}^{} \alpha_i |i\rangle
+\end{equation}
+
+\subsection{Angulos del qubit}
+
+Un qubit se puede representar en una esfera de radio 1, conocida como esfera de Bloch. Para esto, se definen dos angulos $\theta$ y $\phi$:
+
+\begin{equation}
+    |\psi\rangle = \cos\left(\frac{\theta}{2}\right) |0\rangle + e^{\ii \phi} \sin\left(\frac{\theta}{2}\right) |1\rangle
+\end{equation}
+
+Donde, recordar que se un numero imaginario $a + bi$, se puede definiri como:
+
+\begin{equation}
+    a + bi = re^{\ii \phi} \quad \text{con} \quad r = \sqrt{a^2 + b^2} \quad \text{y} \quad \phi = \tan^{-1}\left(\frac{b}{a}\right)
+\end{equation}
+
+\section{Dual}
+
+Sea un qubit base:
+
+\begin{equation}
+    |\psi\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \alpha |0\rangle + \beta |1\rangle
+\end{equation}
+
+El dual de este qubit es:
+
+\begin{equation}
+    \langle \psi | = \begin{pmatrix} \alpha^* & \beta^* \end{pmatrix} = \alpha^* \langle 0| + \beta^* \langle 1|
+\end{equation}
+
+Donde la notacion $^*$ denota el conjugado complejo, es decir, si $\alpha = a + bi$, entonces $\alpha^* = a - bi$. El espacio lineal de los duales es:
+
+\begin{equation}
+    \langle \psi | = \sum_{}^{} \alpha_i^* \langle i |
+\end{equation}
+
+\section{Producto interno escalar o bra-ket}
+
+Sea el qubit:
+
+\begin{equation}
+    |\psi\rangle = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}
+\end{equation}
+
+Y el dual:
+
+\begin{equation}
+    \langle \phi | = \begin{pmatrix} w_1^* & w_2^* \end{pmatrix}
+\end{equation}
+
+El producto interno escalar entre un qubit y un dual es:
+
+\begin{equation}
+    \langle \phi | \psi \rangle = \sum_{i} w_i^* v_i = w_1^* v_1 + w_2^* v_2
+\end{equation}
+
+Donde se cumple que:
+
+\begin{equation}
+    \langle \phi | \psi \rangle = \langle \psi | \phi \rangle^*
+\end{equation}
+
+Si dos vectores son ortogonales, se cumple que:
+
+\begin{equation}
+    \langle \phi | \psi \rangle = 0
+\end{equation}
+
+Y si es un vector consigo mismo, se cumple que:
+
+\begin{equation}
+    \langle \psi | \psi \rangle = 1
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Estados ortogonales}
+
+Existen algunos estados que son ortogonales entre si, y conocidos como estados base. Estos son:
+
+\begin{equation}
+    |0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    |+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad |-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    |R\rangle = \frac{1}{\sqrt{2}} (|0\rangle + \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \ii \end{pmatrix}, \quad |L\rangle = \frac{1}{\sqrt{2}} (|0\rangle - \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix}
+\end{equation}
+
+
+
+\section{Operadores}
+
+Los operadores son matrices que actuan sobre los qubits, generando una rotacion del estado, o una transformacion del mismo. Algunos operadores basicos son:
+
+\begin{itemize}
+    \item Operador identidad:
+    \begin{equation}
+        I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+    \end{equation}
+    
+    \item Operador X (NOT):
+    \begin{equation}
+        X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+    \end{equation}
+    
+    \item Operador Y:
+    \begin{equation}
+        Y = \begin{pmatrix} 0 & -\ii \\ \ii & 0 \end{pmatrix}
+    \end{equation}
+    
+    \item Operador Z:
+    \begin{equation}
+        Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+    \end{equation}
+    
+    \item Operador Hadamard:
+    \begin{equation}
+        H = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+    \end{equation}
+\end{itemize}
+
+\end{document}

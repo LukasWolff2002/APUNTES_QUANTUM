@@ -183,6 +183,11 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT ./ANGULOS.png
+INPUT ./ANGULOS.png
+INPUT ./ANGULOS.png
+INPUT ./ANGULOS.png
+INPUT ./ANGULOS.png
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT informe.aux
 INPUT ./informe.out

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759580777.1128 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" "informe.pdf" "informe" 1759580777.6387 0
-  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" 1759580776.34508 10381 15750892dd440ad280695f0c7bbafa54 ""
+["pdflatex"] 1759581147.96682 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" "informe.pdf" "informe" 1759581148.51405 0
+  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" 1759581147.19623 10603 f283093b210c036c4cb5fd0164f8fe0a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -103,9 +103,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710685657.15962 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1710685568 8221436 9feefa88f893c4604437a3bcd513880c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "informe.aux" 1759580777.59409 2111 51ed265936fba2d5e961cf4812d77d55 "pdflatex"
-  "informe.out" 1759580777.59556 2089 f7daf1d1bc38468e2c30d8906a9a4155 "pdflatex"
-  "informe.tex" 1759580776.34508 10381 15750892dd440ad280695f0c7bbafa54 ""
+  "ANGULOS.png" 1759581073.57694 17386 477636387296aae6c5597601f061c2b8 ""
+  "informe.aux" 1759581148.46773 2302 b517dcdd96684763cd49c148f1281b26 "pdflatex"
+  "informe.out" 1759581148.46894 2089 f7daf1d1bc38468e2c30d8906a9a4155 "pdflatex"
+  "informe.tex" 1759581147.19623 10603 f283093b210c036c4cb5fd0164f8fe0a ""
   (generated)
   "informe.aux"
   "informe.log"

@@ -9,6 +9,9 @@
 
 \newcommand{\ii}{\mathrm{i}}
 
+\usepackage{titling}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}}
 \title{Apuntes Quantum}
 \author{
     Lukas Wolff}
@@ -74,6 +77,19 @@ Las bases son conjuntos de qubits ortogonales entre si, que permiten representar
     |+y\rangle = \frac{1}{\sqrt{2}} (|0\rangle + \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \ii \end{pmatrix}, \quad |-y\rangle = \frac{1}{\sqrt{2}} (|0\rangle - \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix}
 \end{equation}
 
+\subsection{Producto tensorial}
+
+El producto tensorial permite combinar dos o mas qubits para formar un sistema de qubits. Si se tienen dos qubits $|\psi\rangle$ y $|\phi\rangle$, definidos como:
+
+\begin{equation}
+    |\psi\rangle = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}
+\end{equation}
+
+El producto tensorial entre ambos qubits es:
+
+\begin{equation}
+    |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} v_1 w_1 \\ v_1 w_2 \\ v_2 w_1 \\ v_2 w_2 \end{pmatrix} = v_1 w_1 |00\rangle + v_1 w_2 |01\rangle + v_2 w_1 |10\rangle + v_2 w_2 |11\rangle
+\end{equation}
 
 \section{Dual}
 
@@ -233,4 +249,69 @@ La operacion de un operador sobre un qubit se representa como:
 \begin{equation}
     |\psi\rangle \rightarrow U = U |\psi\rangle
 \end{equation}
+
+\section{Entrelazamiento}
+
+El entrelazamiento es un fenomeno cuantico que ocurre cuando dos o mas qubits estan correlacionados de tal manera que el estado de uno depende del estado del otro, incluso si estan separados por grandes distancias. Un ejemplo comun de un estado entrelazado es el estado de Bell:
+
+\begin{equation}
+    |\Phi^+\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)
+\end{equation}
+
+Es decir, si se mide el primer qubit y se obtiene 0, el segundo qubit tambien sera 0. Si se mide el primer qubit y se obtiene 1, el segundo qubit tambien sera 1.
+
+Es importante notar que una vez que se genera entrelazamiento, no se puede deshacer mediante operaciones locales en los qubits individuales.
+
+\subsection{Regla de CHSH}
+
+La desigualdad de CHSH es una extension de la desigualdad de Bell, que permite cuantificar el grado de entrelazamiento entre dos qubits. Se define como:
+
+\begin{equation}
+    S = E(a, b) - E(a, b') + E(a', b) + E(a', b')
+\end{equation}
+
+Donde $E(a, b)$ es la correlacion entre las mediciones de los qubits en las direcciones $a$ y $b$. Si se encuentra que $|S| > 2$, entonces los qubits estan entrelazados con un limite superior de $|S| \leq 2\sqrt{2}$.
+
+\subsection{Teorema de no clonacion}
+
+El teorema de no clonacion establece que no es posible crear una copia exacta de un estado cuantico desconocido. Esto se debe a que la operacion de clonacion violaria los principios fundamentales de la mecanica cuantica, como la superposicion y el entrelazamiento. 
+
+Demostracion por contradiccion, sea U el copiador universal, entonces se debe cumplir que:
+
+\begin{equation}
+    U |\psi\rangle |0\rangle = |\psi\rangle |\psi\rangle \quad (1)
+\end{equation}
+
+\begin{equation}
+    U |\psi\rangle |0\rangle = \alpha^2 |0\rangle |0\rangle + \alpha \beta |0\rangle |1\rangle + \alpha \beta |1\rangle |0\rangle + \beta^2 |1\rangle |1\rangle \quad (2)
+\end{equation}
+
+Pero tal operacion debe ser cierta para cualquier estado, por lo que si lo aplicamos a la base:
+
+\begin{equation}
+    U |0\rangle |0\rangle = |0\rangle |0\rangle \quad 
+\end{equation}
+
+Analogo para el estado $|1\rangle$:
+
+\begin{equation}
+    U |1\rangle |0\rangle = |1\rangle |1\rangle \quad
+\end{equation}
+
+Usando propiedades lineales, sabemos que:
+
+\begin{equation}
+    U |\psi\rangle = U (\alpha |0\rangle + \beta |1\rangle) 
+\end{equation}
+
+Por lo tanto:
+
+\begin{equation}
+    U (\alpha |0\rangle + \beta |1\rangle) |0\rangle = \alpha |0\rangle |0\rangle + \beta |1\rangle |1\rangle \quad (3)
+\end{equation}
+
+Donde es aplicada la misma logica que la copia de un estado clasico. Pero si comparamos (2) y (3), vemos que no son iguales, por lo que se llega a una contradiccion, y por lo tanto, no es posible clonar un estado cuantico desconocido.
+
+\section{Ejercicos resueltos}
+
 \end{document}

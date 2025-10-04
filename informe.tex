@@ -9,7 +9,7 @@
 
 \newcommand{\ii}{\mathrm{i}}
 
-\title{\textbf{\LARGE Apuntes Quantum}}
+\title{Apuntes Quantum}
 \author{
     Lukas Wolff}
 \date{}
@@ -56,6 +56,24 @@ Donde, recordar que se un numero imaginario $a + bi$, se puede definiri como:
 \begin{equation}
     a + bi = re^{\ii \phi} \quad \text{con} \quad r = \sqrt{a^2 + b^2} \quad \text{y} \quad \phi = \tan^{-1}\left(\frac{b}{a}\right)
 \end{equation}
+
+
+\subsection{Bases}
+
+Las bases son conjuntos de qubits ortogonales entre si, que permiten representar cualquier qubit como una combinacion lineal de los qubits de la base. Algunas bases comunes son:
+
+\begin{equation}
+    |0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    |+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad |-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    |+y\rangle = \frac{1}{\sqrt{2}} (|0\rangle + \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \ii \end{pmatrix}, \quad |-y\rangle = \frac{1}{\sqrt{2}} (|0\rangle - \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix}
+\end{equation}
+
 
 \section{Dual}
 
@@ -115,40 +133,39 @@ Y si es un vector consigo mismo, se cumple que:
     \langle \psi | \psi \rangle = 1
 \end{equation}
 
+\section{Producto externo o ket-bra}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Estados ortogonales}
-
-Existen algunos estados que son ortogonales entre si, y conocidos como estados base. Estos son:
+Sea el qubit:
 
 \begin{equation}
-    |0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+    |\psi\rangle = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}
 \end{equation}
+
+Y el dual:
 
 \begin{equation}
-    |+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad |-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+    \langle \phi | = \begin{pmatrix} w_1^* & w_2^* \end{pmatrix}
 \end{equation}
+
+El producto externo entre un qubit y un dual es:
 
 \begin{equation}
-    |R\rangle = \frac{1}{\sqrt{2}} (|0\rangle + \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \ii \end{pmatrix}, \quad |L\rangle = \frac{1}{\sqrt{2}} (|0\rangle - \ii |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix}
+    |\psi\rangle \langle \phi | = \begin{pmatrix} v_1 w_1^* & v_1 w_2^* \\ v_2 w_1^* & v_2 w_2^* \end{pmatrix}
 \end{equation}
 
+Lo cual es la matriz de proyeccion del qubit $|\psi\rangle$ sobre el dual $\langle \phi |$.
 
+Luego, para cualquier base se cumple que:
+
+\begin{equation}
+    I = \sum_{i} |i\rangle \langle i |
+\end{equation}
+
+Donde $I$ es el operador identidad, por ejemplo, para la base computacional:
+
+\begin{equation}
+    I = |0\rangle \langle 0| + |1\rangle \langle 1| = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} + \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+\end{equation}
 
 \section{Operadores}
 
@@ -181,4 +198,39 @@ Los operadores son matrices que actuan sobre los qubits, generando una rotacion 
     \end{equation}
 \end{itemize}
 
+\subsection{Operador NOT de una base cualquiera}
+
+Para calcular el operador NOT de una base cualquiera, se debe conocer los vectores de la base. Sea la base:
+
+\begin{equation}
+    |u\rangle = \begin{pmatrix} a \\ b \end{pmatrix}, \quad |v\rangle = \begin{pmatrix} c \\ d \end{pmatrix}
+\end{equation}
+
+El operador NOT en esta base se define como:
+
+\begin{equation}
+    X_{uv} = |u\rangle \langle v| + |v\rangle \langle u| = \begin{pmatrix} a \\ b \end{pmatrix} \begin{pmatrix} c^* & d^* \end{pmatrix} + \begin{pmatrix} c \\ d \end{pmatrix} \begin{pmatrix} a^* & b^* \end{pmatrix}
+\end{equation}
+
+\subsection{Operador unitario}
+
+Un operador unitario es aquel que cumple que:
+
+\begin{equation}
+    U^\dagger U = U U^\dagger = I
+\end{equation}
+
+Donde $U^\dagger$ es el conjugado transpuesto de $U$. Los operadores unitarios son importantes en la mecanica cuantica, ya que representan las transformaciones que pueden sufrir los estados cuanticos sin perder informacion. Se cumple que:
+
+\begin{equation}
+    \langle \psi | U^\dagger U | \psi \rangle = \langle \psi | I | \psi \rangle = \langle \psi | \psi \rangle = 1
+\end{equation}
+
+\subsection{Operaciones}
+
+La operacion de un operador sobre un qubit se representa como:
+
+\begin{equation}
+    |\psi\rangle \rightarrow U = U |\psi\rangle
+\end{equation}
 \end{document}

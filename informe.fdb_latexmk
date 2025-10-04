@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759579243.28334 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" "informe.pdf" "informe" 1759579243.78812 0
-  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" 1759579243.09637 4592 9c30138113c05216d257c6fc9d42ded9 ""
+["pdflatex"] 1759579804.57934 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" "informe.pdf" "informe" 1759579805.10248 0
+  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/APUNTES_QUANTUM/informe.tex" 1759579804.41029 6892 7a4b9336e5afab5355fad3ed70202903 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -37,6 +37,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -102,9 +103,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710685657.15962 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1710685568 8221436 9feefa88f893c4604437a3bcd513880c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "informe.aux" 1759579243.74371 1005 709c083e33fcab6a3b873f1a22a5eedb "pdflatex"
-  "informe.out" 1759579243.74498 738 d3624f8993fa977e0b40d492bd645f0d "pdflatex"
-  "informe.tex" 1759579243.09637 4592 9c30138113c05216d257c6fc9d42ded9 ""
+  "informe.aux" 1759579805.05662 1508 0bdd9a170e9d2daeed03d4487a71a0c7 "pdflatex"
+  "informe.out" 1759579805.05781 1366 2511c4cdebac413cdf0233c608238107 "pdflatex"
+  "informe.tex" 1759579804.41029 6892 7a4b9336e5afab5355fad3ed70202903 ""
   (generated)
   "informe.aux"
   "informe.log"

@@ -323,4 +323,129 @@ Donde es aplicada la misma logica que la copia de un estado clasico. Pero si com
 
 \section{Ejercicos resueltos}
 
+\subsection{Angulo de un qubit}
+
+Sea el qubit:
+
+\begin{equation}
+    |\psi\rangle = \frac{3 + i\sqrt{3}}{4} |0\rangle - \frac{1}{2} |1\rangle
+\end{equation}
+
+Determinar los angulos $\theta$ y $\phi$ en la esfera de Bloch.
+
+En primer lugar es nesesario dejar el estado $|0\rangle$ sin parte imaginaria, para eso se puede reescribir como:
+
+\begin{equation}
+    \frac{3 + i\sqrt{3}}{4} = \frac{\sqrt{3}}{2} e^{i\pi/6}
+\end{equation}
+
+De esta forma, se puede reescribir el qubit como:
+
+\begin{equation}
+    |\psi\rangle = \frac{\sqrt{3}}{2} e^{i\pi/6} |0\rangle - \frac{1}{2} |1\rangle
+\end{equation}
+
+Luego, se puede factorizar el termino $e^{i\pi/6}$, ya que es un factor global que no afecta las probabilidades:
+
+\begin{equation}
+    |\psi\rangle = e^{i\pi/6} \left( \frac{\sqrt{3}}{2} |0\rangle - \frac{1}{2} e^{-i\pi/6} |1\rangle \right)
+\end{equation}
+
+Asi mismo, al ser un factor global, se puede eliminar:
+
+\begin{equation}
+    |\psi\rangle = \frac{\sqrt{3}}{2} |0\rangle - \frac{1}{2} e^{-i\pi/6} |1\rangle
+\end{equation}
+
+Luego, se puede comparar con la forma general del qubit en la esfera de Bloch:
+
+\begin{equation}
+    |\psi\rangle = \cos\left(\frac{\theta}{2}\right) |0\rangle + e^{i\phi} \sin\left(\frac{\theta}{2}\right) |1\rangle
+\end{equation}
+
+De esta forma los angulos son:
+
+\begin{equation}
+    \theta = \frac{\pi}{3}, \quad \phi = -\frac{\pi}{6}
+\end{equation}
+
+\subsection{Operador Unitario}
+
+Sea U tal que:
+
+\begin{equation}
+    U |0\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix} \quad \text{y} \quad U |1\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} -\ii \\ 1 \end{pmatrix}
+\end{equation}
+
+Definir el operador unitario U.
+
+Para definir el operador unitario U, se puede usar la propiedad de que cualquier operador se puede definir por su accion sobre una base completa. En este caso, la base computacional $|0\rangle$ y $|1\rangle$ es una base completa para el espacio de qubits.
+
+Por lo tanto, se puede escribir el operador U como:
+
+\begin{equation}
+    U = |u_0\rangle \langle 0| + |u_1\rangle \langle 1|
+\end{equation}
+
+Donde $|u_0\rangle$ y $|u_1\rangle$ son los resultados de la accion de U sobre los estados base $|0\rangle$ y $|1\rangle$ respectivamente. Entonces:
+
+\begin{equation}
+    U = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -\ii \end{pmatrix} \begin{pmatrix} 1 & 0 \end{pmatrix} + \frac{1}{\sqrt{2}} \begin{pmatrix} -\ii \\ 1 \end{pmatrix} \begin{pmatrix} 0 & 1 \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    U = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -\ii \\ -\ii & 1 \end{pmatrix}
+\end{equation}
+
+Ahora, es U una compuerta cuantica valida? 
+
+Se pueden emplear 2 metodos, probabilidades o prueba de condicion unitaria.
+
+i) Probabilidades:
+
+Sea el qubit:
+
+\begin{equation}
+    |\psi\rangle = \alpha |0\rangle + \beta |1\rangle
+\end{equation}
+
+Entonces, la accion de U sobre $|\psi\rangle$ es:
+
+\begin{equation}
+    U |\psi\rangle = U (\alpha |0\rangle + \beta |1\rangle) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -\ii \\ -\ii & 1 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} \alpha - \ii \beta \\ -\ii \alpha + \beta \end{pmatrix}
+\end{equation}
+
+Luego, sabemos que las probabilidades deben sumar 1, del qubit se cumple que:
+
+\begin{equation}
+    |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+
+Por lo tanto, se debe cumplir que:
+
+\begin{equation}
+    \left| \frac{\alpha - \ii \beta}{\sqrt{2}} \right|^2 + \left| \frac{-\ii \alpha + \beta}{\sqrt{2}} \right|^2 = 1
+\end{equation}
+
+Lo cual se cumple, por lo que U es una compuerta cuantica valida.
+
+ii) Condicion unitaria:
+
+Para que U sea un operador unitario, se debe cumplir que:
+
+\begin{equation}
+    U^\dagger U = U U^\dagger = I
+\end{equation}
+
+Donde $U^\dagger$ es el conjugado transpuesto de U igual a:
+
+\begin{equation}
+    U^\dagger = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & \ii \\ \ii & 1 \end{pmatrix}
+\end{equation}
+
+Entonces:
+
+\begin{equation}
+    U^\dagger U = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & \ii \\ \ii & 1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -\ii \\ -\ii & 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 + 1 & -\ii + \ii \\ \ii - \ii & 1 + 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I
+\end{equation}
 \end{document}

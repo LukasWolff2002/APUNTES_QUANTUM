@@ -100,6 +100,36 @@ El producto tensorial entre ambos qubits es:
     |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} v_1 w_1 \\ v_1 w_2 \\ v_2 w_1 \\ v_2 w_2 \end{pmatrix} = v_1 w_1 |00\rangle + v_1 w_2 |01\rangle + v_2 w_1 |10\rangle + v_2 w_2 |11\rangle
 \end{equation}
 
+\subsection{Proyeccion}
+
+Sea el qubit:
+
+\begin{equation}
+    |\psi\rangle = \alpha |0\rangle + \beta |1\rangle 
+\end{equation}
+
+La proyeccion de este qubit sobre una base cualquiera ($|u\rangle, |v\rangle$) se puede representar como:
+
+\begin{equation}
+    |\psi '\rangle = \alpha ' |u\rangle + \beta ' |v\rangle
+\end{equation}
+
+Luego, se puede calcular los coeficientes $\alpha '$ y $\beta '$ como:
+
+\begin{equation}
+    \alpha ' = \langle u | \psi \rangle = 
+\end{equation}
+
+\begin{equation}
+    \beta ' = \langle v | \psi \rangle =
+\end{equation}
+
+Donde se tiene que cumplir que:
+
+\begin{equation}
+    |\alpha '|^2 + |\beta '|^2 = 1
+\end{equation}
+
 \section{Dual}
 
 Sea un qubit base:
